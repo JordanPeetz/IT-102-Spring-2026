@@ -27,7 +27,7 @@ def decode_to_base_64(encoded_text: str) -> str:
     '''
 1) Taking base64 string back to original plaintext
 2) Convert base84 string to get original bytes
-3) Decode the byste back to utf-8 string
+3) Decode the bytes back to utf-8 string
     '''
     encoded_as_bytes = encoded_text.encode("utf-8")
     decoded_bytes = base64.b64decode(encoded_as_bytes)
@@ -50,6 +50,7 @@ def main():
 
     #decode
     decoded = decode_to_base_64(encoded)
+    print(f"UTF-8 : {decoded}")
 
     #validation
     match = decoded == message
